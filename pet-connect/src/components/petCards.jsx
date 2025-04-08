@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function PetCards() {
   // Sample pet data (replace with your actual data)
@@ -140,9 +141,18 @@ function PetCards() {
   return (
     <div className="container mx-auto py-8 px-4">
       {/* Available for Adoption Row */}
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-        Available for Adoption
-      </h2>
+      <div className="md:flex md:justify-between md:items-center mb-4">
+        <h2 className="text-2xl font-semibold text-gray-800">
+          Available for Adoption
+        </h2>
+        <Link
+          to="/pet-match"
+          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-4 md:mt-0"
+        >
+          Find Your Preference
+        </Link>
+      </div>
+
       <div className="overflow-x-auto whitespace-nowrap py-4">
         {pets.map((pet) => (
           <div
